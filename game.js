@@ -1,7 +1,7 @@
 const neighbours = (location) => {
   const [xS, yS] = location.split(':')
-  x = Number(xS)
-  y = Number(yS)
+  const x = Number(xS)
+  const y = Number(yS)
   const result = [
     `${x - 1}:${y - 1}`,
     `${x - 1}:${y}`,

@@ -93,3 +93,14 @@ test(`should run a tick`, (t) => {
   t.deepEqual(game.tick(starting).sort(), expected.sort(), `ticks`)
   t.end();
 })
+
+
+let init = ['0:1','0:2','0:3','1:1','1:3','2:1','2:2','2:3']
+
+for (let i = 0; i <= 30; i++) {
+  init.forEach((x) => {
+    console.log(x)
+  })
+  console.log('--------------------');
+  init = game.tick(init)
+}
