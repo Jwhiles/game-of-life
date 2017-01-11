@@ -1,6 +1,7 @@
 const test = require('tape');
 
 const game = require('./game.js');
+const { interpretGameState, makeGrid } = require('./visualise.js');
 
 test('Should return all neighbours for a live cell', (t) => {
   const expected = ['0:1','0:2','0:3','1:1','1:3','2:1','2:2','2:3']
@@ -95,12 +96,13 @@ test(`should run a tick`, (t) => {
 })
 
 
-let init = ['0:1','0:2','0:3','1:1','1:3','2:1','2:2','2:3']
+let init = ['3:4','5:2','3:3','2:2','3:3','2:4','3:5','3:4']
+let grid = makeGrid(5)
 
 for (let i = 0; i <= 30; i++) {
-  init.forEach((x) => {
-    console.log(x)
-  })
-  console.log('--------------------');
+  interpretGameState(grid, init).forEach((x) => {
+    console.log(x);
+  });
   init = game.tick(init)
+  console.log('---------')
 }
