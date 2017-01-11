@@ -1,0 +1,15 @@
+.x {
+  height: 10vh;
+  width: 10vh;
+  background-color: grey
+}
+
+.alive {
+  background-color: hotpink;
+}
+
+.start {
+  margin-top: 20px;
+  height: 100px;
+  width: 200px;
+}
