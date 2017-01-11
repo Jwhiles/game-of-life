@@ -97,10 +97,9 @@ test(`should run a tick`, (t) => {
 
 
 let init = ['3:4','5:2','3:3','2:2','3:3','2:4','3:4','3:4']
-let grid = makeGrid(5)
 
 for (let i = 0; i <= 30; i++) {
-  interpretGameState(grid, init).forEach((x) => {
+  interpretGameState(makeGrid(10), init).forEach((x) => {
     console.log(x);
   });
   init = game.tick(init)

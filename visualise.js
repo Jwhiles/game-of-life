@@ -16,7 +16,6 @@ const changeMatrix = (matrix, coord) => {
   const y = Number(yS)
   const dimensions = matrix.length;
   if (x < matrix.length && x >= 0 && y < matrix.length && y >= 0) {
-  console.log(x, y);
   const newTrix = matrix.slice(0);
   newTrix[y][x] = 1;
   return newTrix;
