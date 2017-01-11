@@ -85,7 +85,6 @@ const interpretGameState = (matrix, game) => {
 
 let xs = document.getElementsByClassName('x');
 
-let state = turn(['1:1','2:2','3:3','1:2','4:4','3:4','5:4','6:4'])
 
 
 function turn (state) {
@@ -108,12 +107,13 @@ function updateDom (array) {
 }
 
 function doit (state) {
-  const current = concat(interpretGameState(makeGrid(6), state));
+  const current = concat(interpretGameState(makeGrid(9), state));
   updateDom(current);
   return turn(state)
 }
 
-updateDom(concat(state))
+let state = turn(['1:1','2:2','3:3','1:2','4:4','3:4','5:4','6:4'])
+state = doit(state)
 
 document.getElementsByClassName('start')[0].addEventListener('click', () => {
   state = doit(state)

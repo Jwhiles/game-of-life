@@ -9,7 +9,12 @@
 }
 
 .start {
-  margin-top: 20px;
+  background-color: hotpink;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
   height: 100px;
   width: 200px;
+  border: solid black 2px;
+  border-radius: 5px
 }
