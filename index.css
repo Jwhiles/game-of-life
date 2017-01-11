@@ -21,3 +21,10 @@
   border: solid black 2px;
   border-radius: 5px
 }
+
+@media (max-width: 600px) {
+  .x {
+    height: 30px;
+    width: 30px
+  }
+}
