@@ -1,11 +1,14 @@
 .x {
   height: 10vh;
   width: 10vh;
-  background-color: grey
+  background-color: grey;
+  border-radius: 3px;
 }
 
 .alive {
   background-color: hotpink;
+  border-radius: 3px;
+
 }
 
 .start {
