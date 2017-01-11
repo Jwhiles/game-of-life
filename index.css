@@ -11,8 +11,8 @@
 .start {
   background-color: hotpink;
   position: absolute;
-  top: 5vh;
-  right: 5vw;
+  bottom: 5vh;
+  left: 5vw;
   height: 100px;
   width: 200px;
   border: solid black 2px;
