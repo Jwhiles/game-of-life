@@ -68,26 +68,6 @@ test('Should check if a given coordinate will live', (t) => {
   t.end();
 })
 
-test(`Should make an array of coords to check, from a count object`, (t) => {
-  const count = {
-    '0:1': 3,
-    '0:2': 1,
-    '0:3': 2,
-    '1:1': 1,
-    '1:2': 1,
-    '1:3': 4,
-    '2:1': 1,
-    '2:2': 1,
-    '2:3': 1,
-    '4:5': 3
-  }
-  const expected = ['0:1','0:2', '0:3', '1:1', '1:2',
-  '1:3', '2:1', '2:2', '2:3', '4:5'];
-
-  t.deepEqual(game.toCheck(count).sort(), expected.sort(), `should male the expected list of coords to check`);
-  t.end()
-})
-
 test(`should run a tick`, (t) => {
   const starting = ['1:1','1:2','1:3']
   const expected = ['1:2','0:2','2:2']
