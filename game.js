@@ -46,6 +46,5 @@ module.exports = {
   neighbours,
   count,
   checkLife,
-  toCheck,
   tick
 }
