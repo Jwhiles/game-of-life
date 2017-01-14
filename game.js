@@ -31,21 +31,14 @@ const checkLife = (count, neighbours, coord) => {
   return neighbours.indexOf(coord) !== -1 ? count[coord] === 2 || count[coord] === 3 : count[coord] === 3
 }
 
-const toCheck = (count) => {
-  return Object.keys(count).map((x) => {
-    return x
-  })
-}
-
 const tick = (coords) => {
   let state = {}
   coords.forEach((x) => {
     state = count(state, neighbours(x));
-  })
-  const toBeChecked = toCheck(state)
-  const alive = toBeChecked.filter((x) => {
+  });
+  const alive = Object.keys(state).filter((x) => {
     return checkLife(state, coords, x);
-  })
+  });
   return alive
 }
 
@@ -53,6 +46,5 @@ module.exports = {
   neighbours,
   count,
   checkLife,
-  toCheck,
   tick
 }
