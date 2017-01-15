@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ramda": "^0.23.0",
     "tape": "^4.6.3"
   }
 }
