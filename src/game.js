@@ -1,19 +1,22 @@
-const { curry, filter, reduce, compose, map, concat, split, mapObjIndexed  } = require('ramda');
+const { curry, filter, reduce, compose, map, concat, split, pipe  } = require('ramda');
 
-// ['x:y'] => ['x:y', 'x:y', 'x:y', etc]
-const neighboursFromCoord = curry((location) => {
-  const [x, y] = map((c) => Number(c), split(':', location));
-  return [
-    `${x - 1}:${y - 1}`,
-    `${x - 1}:${y}`,
-    `${x - 1}:${y + 1}`,
-    `${x}:${y - 1}`,
-    `${x}:${y + 1}`,
-    `${x + 1}:${y - 1}`,
-    `${x + 1}:${y}`,
-    `${x + 1}:${y + 1}`,
-  ];
-})
+// 'x:y' => ['x:y', 'x:y', 'x:y', etc]
+const neighboursFromCoord =
+  pipe(
+    split(':'),
+    map(Number),
+    ([x, y]) =>
+      [
+        `${x - 1}:${y - 1}`,
+        `${x - 1}:${y}`,
+        `${x - 1}:${y + 1}`,
+        `${x}:${y - 1}`,
+        `${x}:${y + 1}`,
+        `${x + 1}:${y - 1}`,
+        `${x + 1}:${y}`,
+        `${x + 1}:${y + 1}`
+      ]
+  );
 
 // [] => {}
 const findLiveNeighbours = reduce((acc, x) => {
