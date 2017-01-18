@@ -48,6 +48,5 @@ module.exports = {
   neighboursFromCoord,
   checkLife,
   tick,
-  countAll,
   countAllNeighbours
 }
