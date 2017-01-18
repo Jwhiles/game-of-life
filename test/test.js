@@ -30,17 +30,6 @@ test('Should check if a given coordinate will live', (t) => {
   t.end();
 })
 
-test(`Should count all coords to be checked`, (t) => {
-  t.plan(1)
-
-  const starting = ['1:1','1:2','1:3']
-  const expected =
-    ['0:0','0:1','0:2','1:0','1:2','2:0','2:1','2:2','0:1','0:2','0:3','1:1',
-    '1:3','2:1','2:2','2:3','0:2','0:3','0:4','1:2','1:4','2:2','2:3','2:4'];
-
-  t.deepEqual(game.countAll(starting), expected, `Should return an array of many coordinates`);
-})
-
 test(`Should return all live neighbours from array of coords`, (t) => {
   const starting = ['0:0', '0:1']
   const expected = { '-1:-1': 1, '-1:0': 2, '-1:1': 2, '0:-1': 1, '0:1': 1,

@@ -1,4 +1,4 @@
-const { curry, filter, reduce, compose, map, concat, split, pipe, assoc  } = require('ramda');
+const { curry, filter, reduce, map, concat, split, pipe, assoc  } = require('ramda');
 
 // 'x:y' => ['x:y', 'x:y', 'x:y', etc]
 const neighboursFromCoord =
@@ -19,16 +19,6 @@ const neighboursFromCoord =
   );
 
 // [] => {}
-// const findLiveNeighbours = reduce((acc, x) => {
-//   const tempAcc = Object.assign({}, acc);
-//   if (tempAcc[x]) {
-//     tempAcc[x] = tempAcc[x] + 1
-//   } else {
-//     tempAcc[x] = 1
-//   }
-//   return tempAcc
-// }, {})
-
 const findLiveNeighbours =
   reduce((acc, x) => {
     return assoc(x, (acc[x] || 0) + 1, acc)
@@ -40,17 +30,11 @@ const checkLife = curry((count, startPos, coord) => {
     ? count[coord] === 2 || count[coord] === 3 : count[coord] === 3
 })
 
-// [] => []
-const countAll =
-  pipe(
-    map(neighboursFromCoord),
-    reduce((acc, x) => concat(acc, x), [])
-  )
-
 // [] => {}
 const countAllNeighbours =
   pipe(
-    countAll,
+    map(neighboursFromCoord),
+    reduce((acc, x) => concat(acc, x), []),
     findLiveNeighbours
   )
 
